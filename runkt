@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+./client_darwin_amd64 -r "KCP_SERVER_IP:4000" -l ":8388" -mode fast2
