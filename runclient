@@ -3,7 +3,7 @@
 #Set several variables.
 echo "Please input your region. [us|eu]"
 read REGION
-URL="ws-$REGION.herokuapp.com"
+URL="127.0.0.1"
 LPORT="1088"
 PASSWORD="qbasic"
 CIPHER="aes-256-cfb"
