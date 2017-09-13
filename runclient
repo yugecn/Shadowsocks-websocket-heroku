@@ -3,7 +3,7 @@
 #Set several variables.
 echo "Please input your region. [us|eu]"
 read REGION
-URL="127.0.0.1"
+URL="ws-$REGION.herokuapp.com"
 LPORT="1088"
 PASSWORD="qbasic"
 CIPHER="aes-256-cfb"
@@ -11,4 +11,3 @@ RPORT="80"
 
 
 node local.js -s $URL -l $LPORT -m $CIPHER -k $PASSWORD -r $RPORT
-#./kcptun_client/client_darwin_amd64 -r "$URL:4000" -l ":8388" -mode fast2
