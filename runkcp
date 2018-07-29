@@ -1,8 +1,0 @@
-#!/bin/sh
-
-echo "Please enter your region. [us|eu]"
-read REGION
-URL="ws-$REGION.herokuapp.com"
-
-./kcptun_client/client_darwin_amd64 -r "$URL:4000" -l ":80" -mode fast2
-

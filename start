@@ -1,13 +1,20 @@
 #!/bin/sh
 
 #Set several variables.
-echo "Please input your region. [us|eu]"
+echo "Please input your region. [us|eu|now]"
 read REGION
 URL="ws-$REGION.herokuapp.com"
 LPORT="1088"
 PASSWORD="qbasic"
 CIPHER="aes-256-cfb"
 RPORT="80"
+LHOST="0.0.0.0"
 
+URL2="shadowsocks-heroku-exqclmvnoj.now.sh"
 
-node local.js -s $URL -l $LPORT -m $CIPHER -k $PASSWORD -r $RPORT
+if [ "$REGION" == "now" ]; then 
+    URL=$URL2
+fi
+
+node local.js -s $URL -l $LPORT -m $CIPHER -k $PASSWORD -r $RPORT -b $LHOST
+
